@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/arpeggi-labs-kits-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'API key issued from the Kits AI API access page (https://app.kits.ai/api-access),
+    sent as `Authorization: Bearer <api-key>`.'
+  sources:
+  - openapi/arpeggi-labs-kits-openapi.yml
