@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/arpeggi-labs-kits-openapi.yml
+description: >-
+  Entity-relationship graph for the Kits AI API, derived from the OpenAPI
+  schemas and id-reference fields. Jobs (voice conversion / vocal separation /
+  stem split / voice blend) reference Voice Models by id; the blender produces a
+  new output Voice Model.
+entities:
+  - name: VoiceModel
+    id: id (integer)
+    description: A voice model, user-created or internal to Kits.ai. May be an instrument model.
+    key_fields: [id, title, isUsable, tags, imageUrl, demoUrl]
+  - name: InferenceJob
+    id: id (integer)
+    description: A voice conversion (type infer/tts) job that renders input audio through a voice model.
+    key_fields: [id, type, status, voiceModelId, outputFileUrl]
+  - name: SeparationJob
+    id: id (integer)
+    description: A vocal separation or stem splitter job (type separate) that emits vocal and instrument stems.
+    key_fields: [id, type, status, vocalAudioFileUrl, stemFileUrls]
+  - name: VoiceBlenderJob
+    id: id (integer)
+    description: A job that blends 2-4 voice models into a new output voice model.
+    key_fields: [id, model1Id, model2Id, alpha, outputModelId, status]
+relationships:
+  - from: InferenceJob
+    to: VoiceModel
+    type: belongs_to
+    via: voiceModelId
+  - from: VoiceBlenderJob
+    to: VoiceModel
+    type: has_many
+    via: [model1Id, model2Id, model3Id, model4Id]
+    note: Two to four input models are blended.
+  - from: VoiceBlenderJob
+    to: VoiceModel
+    type: has_one
+    via: outputModelId
+    note: The blend produces one new output voice model, usable once status is "success".
+enumerations:
+  job_status: [running, success, error, cancelled]
+  inference_type: [infer, tts]
+  separation_type: [separate]

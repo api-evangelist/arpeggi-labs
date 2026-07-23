@@ -1,0 +1,22 @@
+{
+  "provider": "arpeggi-labs",
+  "sources": [
+    "arpeggi-labs-stem-splitter-api-openapi.yml",
+    "arpeggi-labs-vocal-separation-api-openapi.yml",
+    "arpeggi-labs-voice-blender-api-openapi.yml",
+    "arpeggi-labs-voice-conversion-api-openapi.yml",
+    "arpeggi-labs-voice-models-api-openapi.yml"
+  ],
+  "outputs": [
+    "arpeggi-labs-stem-splitter-api-openapi.yml",
+    "arpeggi-labs-vocal-separation-api-openapi.yml",
+    "arpeggi-labs-voice-blender-api-openapi.yml",
+    "arpeggi-labs-voice-conversion-api-openapi.yml",
+    "arpeggi-labs-voice-models-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

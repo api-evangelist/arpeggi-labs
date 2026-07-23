@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Kits AI API
+  version: 1.0.0
+extends: openapi/arpeggi-labs-kits-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-18'
+      x-apievangelist-source: https://docs.kits.ai/api-reference
+      x-api-provider: Arpeggi Labs
+      x-async-job-model: create-then-poll
+  - target: $.info
+    update:
+      x-agent-notes: >-
+        All create endpoints enqueue an asynchronous job and return status;
+        poll the matching GET endpoint until status is "success" for signed
+        output URLs (which expire in 4 hours). POST is rate-limited to 1/min
+        per account.
+  - target: $.tags
+    update:
+      - name: Voice Conversion
+        x-marquee: true

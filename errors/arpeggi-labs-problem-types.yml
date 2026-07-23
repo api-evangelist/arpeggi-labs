@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/arpeggi-labs-kits-openapi.yml
+format: plain
+description: >-
+  Error responses observed across the Kits AI API. The API returns conventional
+  HTTP status codes with a short plain-text body (not RFC 9457
+  application/problem+json). Derived from the documented 4xx/429 responses on
+  each operation and enriched from the docs error examples.
+envelope:
+  media_type: text/plain
+  note: >-
+    Bodies are short human-readable strings (e.g. "Rate limit exceeded."), not a
+    structured problem object.
+problems:
+  - status: 401
+    title: Unauthorized
+    detail: Authentication was not provided or was invalid.
+    remediation: 'Send a valid API key as `Authorization: Bearer <api-key>`.'
+    operations: [createVoiceConversion, getVoiceConversion, listVoiceConversions, createStemSplit, getStemSplit, listStemSplits, createVocalSeparation, getVocalSeparation, listVocalSeparations, createVoiceBlend, getVoiceBlend, listVoiceBlends, listVoiceModels, getVoiceModel]
+  - status: 403
+    title: Forbidden
+    detail: Attempted to fetch a job or model that is non-public or does not belong to the requesting user.
+    remediation: Only fetch resources created by the authenticated account.
+    operations: [getVoiceConversion, listVoiceConversions, getStemSplit, getVocalSeparation, getVoiceBlend, getVoiceModel]
+  - status: 404
+    title: Not Found
+    detail: The requested resource does not exist.
+    remediation: Verify the resource id.
+    operations: [getVoiceModel]
+  - status: 422
+    title: Unprocessable Entity
+    detail: Request body or query params are invalid.
+    remediation: Check required multipart/JSON fields and query parameter values.
+    operations: [createVoiceConversion, createStemSplit, createVocalSeparation, createVoiceBlend, listVoiceModels]
+  - status: 429
+    title: Too Many Requests
+    detail: Rate limit exceeded (1000 GET/min, 1 POST/min per account).
+    remediation: Back off and retry; request a limit increase via the Kits support form.
+    operations: [createVoiceConversion, getVoiceConversion, listVoiceConversions, createStemSplit, getStemSplit, listStemSplits, createVocalSeparation, getVocalSeparation, listVocalSeparations, createVoiceBlend, getVoiceBlend, listVoiceBlends]

@@ -1,0 +1,56 @@
+# Kits AI
+
+## Docs
+
+- [POST: Create a New Stem Splitter Job](https://docs.kits.ai/api-reference/api-endpoints/stem-splitter-api/create-new-stem-splitter-job.md): Create a new job to split vocals and instruments from audio tracks using the Kits API.
+- [GET: Fetch a Stem Splitter Job by ID](https://docs.kits.ai/api-reference/api-endpoints/stem-splitter-api/fetch-stem-splitter-job-by-id.md): Get specific stem splitter jobs by ID with the Kits API.
+- [GET: Fetch Stem Splitter Jobs](https://docs.kits.ai/api-reference/api-endpoints/stem-splitter-api/fetch-stem-splitter-jobs.md): Get statuses of stem splitter jobs using the Kits API.
+- [POST: Create a New Vocal Separation Job](https://docs.kits.ai/api-reference/api-endpoints/vocal-separations-api/create-new-vocal-separation-job.md): Create a new job to isolate vocals from audio tracks using the Kits API.
+- [GET: Fetch a Vocal Separation Job by ID](https://docs.kits.ai/api-reference/api-endpoints/vocal-separations-api/fetch-vocal-separation-job-by-id.md): Get specific vocal separation jobs by ID with the Kits API.
+- [GET: Fetch Vocal Separation Jobs](https://docs.kits.ai/api-reference/api-endpoints/vocal-separations-api/fetch-vocal-separation-jobs.md): Get statuses of vocal separation jobs using the Kits API.
+- [POST: Create a Voice Blender Job](https://docs.kits.ai/api-reference/api-endpoints/voice-blender-api/create-new-voice-blender-job.md): Create a new job to blend multiple voices using the Kits API.
+- [GET: Fetch a Voice Blender Job by ID](https://docs.kits.ai/api-reference/api-endpoints/voice-blender-api/fetch-voice-blender-job-by-id.md): Get specific voice blender job by ID using the Kits API.
+- [GET: Fetch Voice Blender Jobs](https://docs.kits.ai/api-reference/api-endpoints/voice-blender-api/fetch-voice-blender-jobs.md): Retrieve statuses of voice blender jobs with the Kits API.
+- [POST: Create a New Voice Conversion Job](https://docs.kits.ai/api-reference/api-endpoints/voice-conversion-api/create-new-voice-conversion-job.md): Create a job to convert one voice to another with the Kits API.
+- [GET: Fetch a Voice Conversion by ID](https://docs.kits.ai/api-reference/api-endpoints/voice-conversion-api/fetch-conversion-by-id.md): Get specific voice conversion jobs by ID with the Kits API.
+- [GET: Fetch Voice Conversions](https://docs.kits.ai/api-reference/api-endpoints/voice-conversion-api/fetch-voice-conversions.md): Retrieve statuses of voice conversion jobs with the Kits API.
+- [GET: Fetch Voice Models](https://docs.kits.ai/api-reference/api-endpoints/voice-model-api/fetch-voice-models.md): Access available voice models using the Kits API.
+- [GET: Fetch a Voice Models by ID](https://docs.kits.ai/api-reference/api-endpoints/voice-model-api/fetch-voice-models-by-id.md): Get specific voice models by ID using the Kits API.
+- [Creating an API Key](https://docs.kits.ai/api-reference/introduction/getting-started.md): Learn how to start using the Kits API with basic setup and authentication.
+- [Quick Start](https://docs.kits.ai/api-reference/introduction/quick-start.md): Learn how to quickly get going using the Kits AI Vocal Conversion API.
+- [Inference Job](https://docs.kits.ai/api-reference/types-limits/inference-job.md): Represents an inference job that has been created through the API.
+- [Paginated Response](https://docs.kits.ai/api-reference/types-limits/paginated-response.md): All list endpoints will return a paginated response of this form.
+- [Pagination Meta](https://docs.kits.ai/api-reference/types-limits/pagination-meta.md): Meta properties on each paginated request.
+- [PostProcessingEffects](https://docs.kits.ai/api-reference/types-limits/post-processing-effects.md): Explore post-processing effects in the Kits API for better audio processing.
+- [PreProcessingEffects](https://docs.kits.ai/api-reference/types-limits/pre-processing-effects.md): Explore pre-processing effects in the Kits API for better audio processing.
+- [Rate Limits](https://docs.kits.ai/api-reference/types-limits/rate-limits.md): Learn about rate limits for using the Kits API.
+- [Vocal Separation Job](https://docs.kits.ai/api-reference/types-limits/vocal-separation-job.md): Represents a vocal separation job that has been created through the API.
+- [Voice Blender Job](https://docs.kits.ai/api-reference/types-limits/voice-blender-job.md): Represents a voice blender job created by the user. These jobs take between 2 and 4 voice models, and blends them given a set of alpha values that represent the percent the output voice model is comprised of each input voice model. Once the job has status "success", the output voice model will be us…
+- [Voice Model](https://docs.kits.ai/api-reference/types-limits/voice-model.md): Represents a voice model that may be user created or internal to Kits.ai.
+- [Step 1: Connect your Stripe account](https://docs.kits.ai/earn/connect-your-stripe.md): Instructions for connecting your Stripe account to submit your trained voice and earn payouts.
+- [Frequently Asked Questions](https://docs.kits.ai/earn/frequently-asked-questions.md): FAQ for all things Kits Earn, from submission to payment.
+- [Introduction](https://docs.kits.ai/earn/getting-started.md): Introducing Kits Earn, a way for vocalists to earn passive income by creating a digital clone of their voice.
+- [Payments](https://docs.kits.ai/earn/payments.md): Instructions for monitoring your earnings and understanding the payment process for your verified verified voice.
+- [Requirements](https://docs.kits.ai/earn/requirements.md): Verification requirements for your voice on Kits
+- [Step 5: Sharing your voice](https://docs.kits.ai/earn/sharing-your-voice.md): Congratulations! Your submission is now a verified voice on Kits. Here is what happens next.
+- [Step 3: Submit your voice](https://docs.kits.ai/earn/submit-your-voice.md): Instructions for submitting your voice for verification.
+- [Step 2: Create your voice](https://docs.kits.ai/earn/train-your-voice.md): Instructions for creating your voice model.
+- [Step 4. Voice review](https://docs.kits.ai/earn/voice-review.md): The Kits team now reviews your voice and gets back to you with an outcome.
+- [Getting Started](https://docs.kits.ai/home.md): Explore all that Kits AI has to offer with our API documentation and guides.
+- [Audio Post-Processing](https://docs.kits.ai/train/audio-post-processing.md): Enhance audio quality with Kits' post-processing training.
+- [Content Guidelines](https://docs.kits.ai/train/content-guidelines.md): For a high quality voice clone, compile 30 to 45 total minutes of vocals recorded in a single session.
+- [File Quality Settings](https://docs.kits.ai/train/file-quality-settings.md): Set up your project to capture high-quality audio for your voice model.
+- [Recording High-Quality Datasets](https://docs.kits.ai/train/high-quality-datasets.md): 30-60 minutes of clean and varied audio will result in the highest-quality voice models.
+- [Microphone Placement](https://docs.kits.ai/train/microphone-placement.md): You should be about 2 inches from the microphone for your regular volume and 4-6 inches for louder phrases/belting. Always be closer than 12 inches from your microphone.
+- [Microphones & Audio Interfaces](https://docs.kits.ai/train/microphones-audio.md): With just a few essential pieces of equipment, you can achieve professional-quality recordings. Here's what you need for a minimalist yet effective vocal recording setup:
+- [Recording Environment](https://docs.kits.ai/train/recording-environment.md): Avoid background noise, reverberant rooms, and audio bleed from headphones.
+- [Volume Level](https://docs.kits.ai/train/volume-level.md): Optimize audio processing with Kits' volume level training guide.
+
+## OpenAPI Specs
+
+- [openapi](https://docs.kits.ai/api-reference/openapi.json)
+
+## Optional
+
+- [Pricing](https://www.app.kits.ai/subscriptions)
+- [Blog](https://www.kits.ai/blog)

@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/arpeggi-labs-kits-openapi.yml
+description: >-
+  Packaged Agent Skills for the Kits AI API, one per marquee flow. Every step is
+  grounded in a real operationId verified against the OpenAPI.
+skills:
+  - file: arpeggi-labs-convert-voice.md
+    name: Convert a performance to a Kits AI voice
+    api: openapi/arpeggi-labs-kits-openapi.yml
+    operations: [listVoiceModels, createVoiceConversion, getVoiceConversion]
+  - file: arpeggi-labs-separate-stems.md
+    name: Separate vocals and stems from a track
+    api: openapi/arpeggi-labs-kits-openapi.yml
+    operations: [createVocalSeparation, getVocalSeparation, createStemSplit, getStemSplit]
+  - file: arpeggi-labs-blend-voices.md
+    name: Blend voice models into a new voice
+    api: openapi/arpeggi-labs-kits-openapi.yml
+    operations: [listVoiceModels, createVoiceBlend, getVoiceBlend]

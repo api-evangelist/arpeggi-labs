@@ -1,0 +1,61 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.kits.ai/api-reference
+description: >-
+  Cross-cutting request/response conventions for the Kits AI API, captured from
+  the published documentation and derived from the OpenAPI. The API is an
+  asynchronous job model: POST create endpoints enqueue a job and return its
+  status; clients poll the matching GET endpoint until status is "success" and
+  signed output file URLs are populated.
+authentication:
+  style: bearer
+  header: Authorization
+  format: 'Bearer <api-key>'
+  key_management: https://app.kits.ai/api-access
+  ref: authentication/arpeggi-labs-authentication.yml
+async_jobs:
+  pattern: create-then-poll
+  statuses: [running, success, error, cancelled]
+  output: >-
+    Signed output file URLs (outputFileUrl, vocalAudioFileUrl, stemFileUrls,
+    etc.) are populated once status is "success"; signed URLs expire in 4 hours.
+uploads:
+  create_content_type: multipart/form-data
+  note: >-
+    Voice conversion, stem splitter, and vocal separation create endpoints
+    require multipart form uploads; the voice blender create endpoint accepts
+    application/json.
+  file_formats: [wav, mp3, flac, webm]
+  max_file_size:
+    voice_conversion: 100MB
+    stem_splitter: 50MB
+    vocal_separation: 50MB
+pagination:
+  style: page-number
+  params:
+    page: Page offset (default 1)
+    perPage: Page size (default 10)
+    order: asc (default) or desc
+  response_envelope:
+    data: array of resources
+    meta:
+      fields: [total, perPage, currentPage, lastPage, firstPage, firstPageUrl, lastPageUrl, nextPageUrl, previousPageUrl]
+  ref: data-model/arpeggi-labs-data-model.yml
+idempotency:
+  supported: false
+  note: >-
+    The Kits AI API does not document an idempotency-key mechanism. Create
+    endpoints are not idempotent; each POST enqueues a new job.
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://arpeggi.io/api/kits/v1
+  ref: lifecycle/arpeggi-labs-lifecycle.yml
+rate_limiting:
+  scope: account
+  limits: 1000 GET/min, 1 POST/min
+  throttled_status: 429
+  ref: rate-limits/arpeggi-labs-rate-limits.yml
+errors:
+  envelope: plain-text body with conventional HTTP status codes
+  ref: errors/arpeggi-labs-problem-types.yml

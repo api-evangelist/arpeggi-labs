@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.kits.ai/api-reference
+description: >-
+  Versioning and lifecycle posture for the Kits AI API, from the published
+  documentation. The API is versioned in the URI path (v1) and is noted as being
+  in an Alpha period (rate limits "subject to change after our Alpha period").
+  No public status page, formal deprecation policy, or SLA was found at
+  enrichment time. One field-level deprecation is documented.
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://arpeggi.io/api/kits/v1
+maturity:
+  stage: alpha
+  evidence: 'Rate Limits doc: "Rate limits are subject to change after our Alpha period."'
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  deprecated_fields:
+    - field: backingAudioFileUrl
+      on: SeparationJob (vocal separation / stem splitter jobs)
+      replacement: Use stemFileUrls or lossyStemFileUrls with instrument "backing" instead.
+      source: https://docs.kits.ai/api-reference/types-limits/vocal-separation-job
+deprecated_operations: []
+sla:
+  url: null
+status_page: null

@@ -1,22 +1,176 @@
 aid: arpeggi-labs
 name: Arpeggi Labs
-description: Arpeggi Labs is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Arpeggi Labs is the company behind Kits AI, a studio-quality AI music and
+  audio platform for musicians, producers, and developers. Kits AI provides
+  voice cloning and conversion, an AI singing generator with 100+ royalty-free
+  artist voice models, vocal isolation, stem separation, AI mastering, and a
+  voice-model blender, alongside an ethically sourced "Earn" program that pays
+  vocalists to license digital clones of their voice. The Kits AI API exposes
+  these capabilities as asynchronous inference jobs over a REST interface at
+  arpeggi.io/api/kits/v1, authenticated with a bearer API key: create a voice
+  conversion, vocal separation, stem split, or voice-blend job, then poll for
+  the signed output file URLs. Arpeggi Labs is an a16z portfolio company; its
+  earlier product was Arpeggi Studio, a web3 in-browser music creation platform.
 url: https://raw.githubusercontent.com/api-evangelist/arpeggi-labs/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kits.ai/opengraph-image
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
+x-tier: profiled
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Music
+- Audio
+- Artificial Intelligence
+- Voice
+- Machine Learning
+- Generative AI
+- Media
+apis:
+- aid: arpeggi-labs:arpeggi-labs-stem-splitter-api
+  name: Arpeggi Labs Stem Splitter API
+  description: Split an audio track into vocal and instrument stems.
+  humanURL: https://docs.kits.ai/api-reference/introduction/getting-started
+  baseURL: https://arpeggi.io/api/kits/v1
+  tags:
+  - Stem Splitter
+  properties:
+  - type: OpenAPI
+    url: openapi/arpeggi-labs-stem-splitter-api-openapi.yml
+  - type: Documentation
+    url: https://docs.kits.ai
+  - type: APIReference
+    url: https://docs.kits.ai/api-reference/introduction/getting-started
+- aid: arpeggi-labs:arpeggi-labs-vocal-separation-api
+  name: Arpeggi Labs Vocal Separation API
+  description: Isolate vocals from a mixed audio track.
+  humanURL: https://docs.kits.ai/api-reference/introduction/getting-started
+  baseURL: https://arpeggi.io/api/kits/v1
+  tags:
+  - Vocal Separation
+  properties:
+  - type: OpenAPI
+    url: openapi/arpeggi-labs-vocal-separation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.kits.ai
+  - type: APIReference
+    url: https://docs.kits.ai/api-reference/introduction/getting-started
+- aid: arpeggi-labs:arpeggi-labs-voice-blender-api
+  name: Arpeggi Labs Voice Blender API
+  description: Blend two to four voice models into a new voice model.
+  humanURL: https://docs.kits.ai/api-reference/introduction/getting-started
+  baseURL: https://arpeggi.io/api/kits/v1
+  tags:
+  - Voice Blender
+  properties:
+  - type: OpenAPI
+    url: openapi/arpeggi-labs-voice-blender-api-openapi.yml
+  - type: Documentation
+    url: https://docs.kits.ai
+  - type: APIReference
+    url: https://docs.kits.ai/api-reference/introduction/getting-started
+- aid: arpeggi-labs:arpeggi-labs-voice-conversion-api
+  name: Arpeggi Labs Voice Conversion API
+  description: Convert an input performance to a target voice model.
+  humanURL: https://docs.kits.ai/api-reference/introduction/getting-started
+  baseURL: https://arpeggi.io/api/kits/v1
+  tags:
+  - Voice Conversion
+  properties:
+  - type: OpenAPI
+    url: openapi/arpeggi-labs-voice-conversion-api-openapi.yml
+  - type: Documentation
+    url: https://docs.kits.ai
+  - type: APIReference
+    url: https://docs.kits.ai/api-reference/introduction/getting-started
+- aid: arpeggi-labs:arpeggi-labs-voice-models-api
+  name: Arpeggi Labs Voice Models API
+  description: Browse and retrieve available voice models.
+  humanURL: https://docs.kits.ai/api-reference/introduction/getting-started
+  baseURL: https://arpeggi.io/api/kits/v1
+  tags:
+  - Voice Models
+  properties:
+  - type: OpenAPI
+    url: openapi/arpeggi-labs-voice-models-api-openapi.yml
+  - type: Documentation
+    url: https://docs.kits.ai
+  - type: APIReference
+    url: https://docs.kits.ai/api-reference/introduction/getting-started
+common:
+- type: DomainSecurity
+  url: security/arpeggi-labs-domain-security.yml
+- type: Authentication
+  url: authentication/arpeggi-labs-authentication.yml
+- type: Website
+  url: https://kits.ai
+- type: DeveloperPortal
+  url: https://app.kits.ai
+- type: Documentation
+  url: https://docs.kits.ai
+- type: APIReference
+  url: https://docs.kits.ai/api-reference/introduction/getting-started
+- type: GettingStarted
+  url: https://docs.kits.ai/api-reference/introduction/quick-start
+- type: Support
+  url: https://help.kits.ai/
+- type: Blog
+  url: https://www.kits.ai/blog
+- type: GitHubOrganization
+  url: https://github.com/arpeggi-labs
+- type: Pricing
+  url: https://app.kits.ai/subscriptions
+- type: SignUp
+  url: https://app.kits.ai
+- type: TermsOfService
+  url: https://www.kits.ai/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.kits.ai/privacy-policy
+- type: LLMsTxt
+  url: llms/arpeggi-labs-llms.txt
+- type: RateLimits
+  url: rate-limits/arpeggi-labs-rate-limits.yml
+- type: ErrorCatalog
+  url: errors/arpeggi-labs-problem-types.yml
+- type: Conventions
+  url: conventions/arpeggi-labs-conventions.yml
+- type: Lifecycle
+  url: lifecycle/arpeggi-labs-lifecycle.yml
+- type: DataModel
+  url: data-model/arpeggi-labs-data-model.yml
+- type: Conformance
+  url: conformance/arpeggi-labs-conformance.yml
+- type: MCPServer
+  url: mcp/arpeggi-labs-mcp.yml
+- type: Packages
+  url: packages/arpeggi-labs-packages.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,31 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Arpeggi Labs
+providerId: arpeggi-labs
+generated: '2026-07-18'
+method: searched
+source: https://docs.kits.ai/api-reference/types-limits/rate-limits
+created: '2026-07-18'
+modified: '2026-07-18'
+tags:
+  - Rate Limiting
+  - Audio
+description: >-
+  Kits AI API rate limits are enforced per Kits.AI account (not per API key), so
+  all keys on an account share the same budget. Limits are noted as subject to
+  change after the API's Alpha period. Request an increase via the Kits support
+  form. HTTP 429 is returned when a limit is exceeded.
+responseCodes:
+  throttled: 429
+limits:
+  - name: GET requests
+    scope: account
+    metric: requests_per_minute
+    limit: 1000
+    timeFrame: minute
+  - name: POST requests
+    scope: account
+    metric: requests_per_minute
+    limit: 1
+    timeFrame: minute
+increase_request: https://help.kits.ai/hc/en-us/requests/new

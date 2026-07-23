@@ -1,0 +1,58 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/arpeggi-labs-kits-openapi.yml
+description: >-
+  Candidate MCP server for the Kits AI API. No official hosted/remote MCP server
+  was found published by Arpeggi Labs at enrichment time; this is a derived
+  candidate tool list, one tool per OpenAPI operation, to seed an MCP wrapper.
+server:
+  name: arpeggi-labs-kits
+  transport: stdio
+  url: null
+auth:
+  type: bearer
+  env: KITS_API_KEY
+tools:
+  - name: create_voice_conversion
+    description: Create a voice conversion job (convert input audio to a target voice model).
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#createVoiceConversion
+  - name: get_voice_conversion
+    description: Fetch a voice conversion job by id.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#getVoiceConversion
+  - name: list_voice_conversions
+    description: List voice conversion jobs.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#listVoiceConversions
+  - name: create_stem_split
+    description: Create a stem splitter job (split audio into vocal and instrument stems).
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#createStemSplit
+  - name: get_stem_split
+    description: Fetch a stem splitter job by id.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#getStemSplit
+  - name: list_stem_splits
+    description: List stem splitter jobs.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#listStemSplits
+  - name: create_vocal_separation
+    description: Create a vocal separation job (isolate vocals from a track).
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#createVocalSeparation
+  - name: get_vocal_separation
+    description: Fetch a vocal separation job by id.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#getVocalSeparation
+  - name: list_vocal_separations
+    description: List vocal separation jobs.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#listVocalSeparations
+  - name: create_voice_blend
+    description: Create a voice blender job (blend 2-4 voice models into a new model).
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#createVoiceBlend
+  - name: get_voice_blend
+    description: Fetch a voice blender job by id.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#getVoiceBlend
+  - name: list_voice_blends
+    description: List voice blender jobs.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#listVoiceBlends
+  - name: list_voice_models
+    description: List available voice models (filter by myModels or instruments).
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#listVoiceModels
+  - name: get_voice_model
+    description: Fetch a voice model by id.
+    source_operation: openapi/arpeggi-labs-kits-openapi.yml#getVoiceModel

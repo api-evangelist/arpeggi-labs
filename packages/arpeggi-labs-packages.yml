@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.kits.ai/api-reference
+description: >-
+  Client library search results for the Kits AI API. Arpeggi Labs does not
+  publish a first-party SDK; the docs demonstrate the API with raw cURL, Python
+  (requests), and JavaScript (axios). One community/unofficial Python package was
+  found on PyPI and is recorded as official:false. Registries probed: npm, PyPI
+  (kits.ai / kitsai / kits-ai), and the arpeggi-labs GitHub org (only forks and
+  Solidity contracts, no SDK). No first-party SDK pointer is emitted.
+packages:
+  - language: python
+    registry: pypi
+    name: kitsai
+    url: https://pypi.org/project/kitsai/
+    source: https://github.com/blaise-tk/kitsai
+    install: pip install kitsai
+    official: false
+    note: Third-party ("Unofficial package to easily interact with the Kits.AI API"), not maintained by Arpeggi Labs.
