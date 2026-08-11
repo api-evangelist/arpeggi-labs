@@ -116,6 +116,8 @@ apis:
   - type: APIReference
     url: https://docs.kits.ai/api-reference/introduction/getting-started
 common:
+- type: Overlay
+  url: overlays/arpeggi-labs-kits-overlay.yaml
 - type: DomainSecurity
   url: security/arpeggi-labs-domain-security.yml
 - type: Authentication
