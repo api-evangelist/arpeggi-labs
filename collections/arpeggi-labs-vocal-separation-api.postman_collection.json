@@ -1,0 +1,788 @@
+{
+  "item": [
+    {
+      "id": "04062aad-3e17-4e9b-a3c7-8e2c03f629df",
+      "name": "Vocal Separation",
+      "description": {
+        "content": "Isolate vocals from a mixed audio track.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1a972150-776f-4cbc-9b8b-569be9cfec3e",
+          "name": "Create a new vocal separation job",
+          "request": {
+            "name": "Create a new vocal separation job",
+            "description": {
+              "content": "Creates a vocal separation job and adds it to the separator queue. All requests must be made as multipart form requests.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vocal-separations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "inputFile",
+                  "type": "file",
+                  "description": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9930bf7b-9aab-4580-964b-7e4972b35ce9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4941,\n  \"createdAt\": \"string\",\n  \"type\": \"separate\",\n  \"status\": \"cancelled\",\n  \"jobStartTime\": \"string\",\n  \"jobEndTime\": \"string\",\n  \"vocalAudioFileUrl\": \"string\",\n  \"lossyVocalAudioFileUrl\": \"string\",\n  \"backingAudioFileUrl\": \"string\",\n  \"stemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"lossyStemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d296192-e971-4fda-aee2-336f86377061",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa80b2b8-3173-43d6-8712-2a5b7aa7605d",
+              "name": "Request body or query params are invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b37fef65-8c2b-4bb8-a9e2-f7d62b198482",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "231ab012-8697-40b5-a2b9-f8d08cb92e81",
+          "name": "Fetch vocal separation jobs",
+          "request": {
+            "name": "Fetch vocal separation jobs",
+            "description": {
+              "content": "Returns a paginated list of vocal separation jobs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vocal-separations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Sort order, asc (default) or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page offset (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Page size (default 10)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbfd6918-7de9-44a7-8849-5aaca78dfcff",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 718,\n      \"createdAt\": \"string\",\n      \"type\": \"separate\",\n      \"status\": \"success\",\n      \"jobStartTime\": \"string\",\n      \"jobEndTime\": \"string\",\n      \"vocalAudioFileUrl\": \"string\",\n      \"lossyVocalAudioFileUrl\": \"string\",\n      \"backingAudioFileUrl\": \"string\",\n      \"stemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"lossyStemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 894,\n      \"createdAt\": \"string\",\n      \"type\": \"separate\",\n      \"status\": \"error\",\n      \"jobStartTime\": \"string\",\n      \"jobEndTime\": \"string\",\n      \"vocalAudioFileUrl\": \"string\",\n      \"lossyVocalAudioFileUrl\": \"string\",\n      \"backingAudioFileUrl\": \"string\",\n      \"stemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"lossyStemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"total\": 3303,\n    \"perPage\": 9175,\n    \"currentPage\": 2035,\n    \"lastPage\": 9700,\n    \"firstPage\": 9306,\n    \"firstPageUrl\": \"string\",\n    \"lastPageUrl\": \"string\",\n    \"nextPageUrl\": \"string\",\n    \"previousPageUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e7d39e4-4477-459e-bf15-4c80197c2340",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "07f33e4e-d4da-48c2-b135-308a07103f26",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28179fe7-aa97-4f2d-b0a4-1b8bd6d1c098",
+          "name": "Fetch a vocal separation job by ID",
+          "request": {
+            "name": "Fetch a vocal separation job by ID",
+            "description": {
+              "content": "Returns a single vocal separation job by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vocal-separations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e083e63f-367b-4e07-8eab-446fe6e5a793",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9960,\n  \"createdAt\": \"string\",\n  \"type\": \"separate\",\n  \"status\": \"success\",\n  \"jobStartTime\": \"string\",\n  \"jobEndTime\": \"string\",\n  \"vocalAudioFileUrl\": \"string\",\n  \"lossyVocalAudioFileUrl\": \"string\",\n  \"backingAudioFileUrl\": \"string\",\n  \"stemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"lossyStemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2a839bb-9ebf-4d1b-82d4-8b02fb170caa",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "30c47c77-7bb7-4f90-b798-5354f15beab1",
+              "name": "Attempted to fetch a resource that does not belong to the requesting user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b048c950-5794-4fe1-869f-57a6d7ad604b",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vocal-separations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://arpeggi.io/api/kits/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e29f924c-8f08-4a53-98b5-235d6cc502b1",
+    "name": "Kits AI Stem Splitter Vocal Separation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Kits AI API (operated by Arpeggi Labs) provides studio-quality AI music and audio tools as asynchronous inference jobs: voice conversion, vocal separation, stem splitting, and voice-model blending, plus a catalog of royalty-free artist voice models. All create endpoints enqueue a job and return its status; poll the corresponding fetch endpoint for the signed output file URLs. This specification was generated by API Evangelist from the published Kits AI documentation (https://docs.kits.ai/); the provider lists an openapi.json in its llms.txt but the file was not retrievable at generation time.\n\nContact Support:\n Name: Kits AI Support",
+      "type": "text/plain"
+    }
+  }
+}

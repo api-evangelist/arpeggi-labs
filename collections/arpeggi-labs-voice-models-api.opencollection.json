@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kits AI Stem Splitter Voice Models API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voice Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch voice models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/voice-models",
+            "params": [
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, asc (default) or desc."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page offset (default 1)."
+              },
+              {
+                "name": "perPage",
+                "value": "",
+                "type": "query",
+                "description": "Page size (default 10)."
+              },
+              {
+                "name": "myModels",
+                "value": "",
+                "type": "query",
+                "description": "Filter the response to your models only."
+              },
+              {
+                "name": "instruments",
+                "value": "",
+                "type": "query",
+                "description": "Filter the response to instrument models only."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of voice models."
+        },
+        {
+          "info": {
+            "name": "Fetch a voice model by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/voice-models/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single voice model by id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kits AI Stem Splitter Voice Conversion API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voice Conversion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch voice conversions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/voice-conversions",
+            "params": [
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, asc (default) or desc."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page offset (default 1)."
+              },
+              {
+                "name": "perPage",
+                "value": "",
+                "type": "query",
+                "description": "Page size (default 10)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of voice conversion inference jobs."
+        },
+        {
+          "info": {
+            "name": "Create a new voice conversion job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://arpeggi.io/api/kits/v1/voice-conversions",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "voiceModelId",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "soundFile",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "conversionStrength",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "modelVolumeMix",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "pitchShift",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "pre",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "post",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a voice conversion inference job and adds it to the inference queue. All requests must be made as multipart form requests. The response contains the job status."
+        },
+        {
+          "info": {
+            "name": "Fetch a voice conversion by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/voice-conversions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single voice conversion inference job by id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

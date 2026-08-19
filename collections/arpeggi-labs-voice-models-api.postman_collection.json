@@ -1,0 +1,547 @@
+{
+  "item": [
+    {
+      "id": "84ff88df-665e-47d7-b6f2-75d6897cc310",
+      "name": "Voice Models",
+      "description": {
+        "content": "Browse and retrieve available voice models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "828fd704-e961-4bc6-b8fc-5e9ae2548fbc",
+          "name": "Fetch voice models",
+          "request": {
+            "name": "Fetch voice models",
+            "description": {
+              "content": "Returns a paginated list of voice models.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Sort order, asc (default) or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page offset (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Page size (default 10)."
+                },
+                {
+                  "disabled": false,
+                  "key": "myModels",
+                  "value": "<boolean>",
+                  "description": "Filter the response to your models only."
+                },
+                {
+                  "disabled": false,
+                  "key": "instruments",
+                  "value": "<boolean>",
+                  "description": "Filter the response to instrument models only."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90b13c35-8d9a-4b76-94c0-5f5375001da9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "myModels",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "instruments",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 3084,\n      \"title\": \"string\",\n      \"isUsable\": true,\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"imageUrl\": \"string\",\n      \"demoUrl\": \"string\",\n      \"twitterLink\": \"string\",\n      \"instagramLink\": \"string\",\n      \"tiktokLink\": \"string\",\n      \"spotifyLink\": \"string\",\n      \"youtubeLink\": \"string\"\n    },\n    {\n      \"id\": 6924,\n      \"title\": \"string\",\n      \"isUsable\": false,\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"imageUrl\": \"string\",\n      \"demoUrl\": \"string\",\n      \"twitterLink\": \"string\",\n      \"instagramLink\": \"string\",\n      \"tiktokLink\": \"string\",\n      \"spotifyLink\": \"string\",\n      \"youtubeLink\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"total\": 1776,\n    \"perPage\": 2439,\n    \"currentPage\": 7899,\n    \"lastPage\": 5849,\n    \"firstPage\": 2371,\n    \"firstPageUrl\": \"string\",\n    \"lastPageUrl\": \"string\",\n    \"nextPageUrl\": \"string\",\n    \"previousPageUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "707a5bd0-a4eb-4bcb-8af0-f9c413b3dc3e",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "myModels",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "instruments",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02072dd3-5291-4f80-8130-0fa04139e0be",
+              "name": "Request body or query params are invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "myModels",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "instruments",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "516adf26-24b2-404c-b582-1902df51b67a",
+          "name": "Fetch a voice model by ID",
+          "request": {
+            "name": "Fetch a voice model by ID",
+            "description": {
+              "content": "Returns a single voice model by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-models",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "65fac56e-5112-4c71-88fd-51a114e18b29",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6731,\n  \"title\": \"string\",\n  \"isUsable\": true,\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"imageUrl\": \"string\",\n  \"demoUrl\": \"string\",\n  \"twitterLink\": \"string\",\n  \"instagramLink\": \"string\",\n  \"tiktokLink\": \"string\",\n  \"spotifyLink\": \"string\",\n  \"youtubeLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79654aba-4ad9-4951-aafa-6eab5d0c4889",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3266f0d8-31c9-420d-bdd9-e371b40e9ead",
+              "name": "Attempted to fetch a resource that does not belong to the requesting user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "734cf3d6-6d26-4d54-aa7d-19ff7875acc7",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-models",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://arpeggi.io/api/kits/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3dbc9430-f511-4660-85b8-f92defcab93e",
+    "name": "Kits AI Stem Splitter Voice Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Kits AI API (operated by Arpeggi Labs) provides studio-quality AI music and audio tools as asynchronous inference jobs: voice conversion, vocal separation, stem splitting, and voice-model blending, plus a catalog of royalty-free artist voice models. All create endpoints enqueue a job and return its status; poll the corresponding fetch endpoint for the signed output file URLs. This specification was generated by API Evangelist from the published Kits AI documentation (https://docs.kits.ai/); the provider lists an openapi.json in its llms.txt but the file was not retrievable at generation time.\n\nContact Support:\n Name: Kits AI Support",
+      "type": "text/plain"
+    }
+  }
+}

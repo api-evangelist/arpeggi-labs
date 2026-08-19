@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kits AI Stem Splitter API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stem Splitter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch stem splitter jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/stem-splits",
+            "params": [
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, asc (default) or desc."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page offset (default 1)."
+              },
+              {
+                "name": "perPage",
+                "value": "",
+                "type": "query",
+                "description": "Page size (default 10)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of stem splitter jobs."
+        },
+        {
+          "info": {
+            "name": "Create a new stem splitter job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://arpeggi.io/api/kits/v1/stem-splits",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "inputFile",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a stem splitter job and adds it to the splitter queue. All requests must be made as multipart form requests."
+        },
+        {
+          "info": {
+            "name": "Fetch a stem splitter job by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/stem-splits/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single stem splitter job by id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

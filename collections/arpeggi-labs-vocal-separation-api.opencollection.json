@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kits AI Stem Splitter Vocal Separation API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vocal Separation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch vocal separation jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/vocal-separations",
+            "params": [
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, asc (default) or desc."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page offset (default 1)."
+              },
+              {
+                "name": "perPage",
+                "value": "",
+                "type": "query",
+                "description": "Page size (default 10)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of vocal separation jobs."
+        },
+        {
+          "info": {
+            "name": "Create a new vocal separation job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://arpeggi.io/api/kits/v1/vocal-separations",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "inputFile",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a vocal separation job and adds it to the separator queue. All requests must be made as multipart form requests."
+        },
+        {
+          "info": {
+            "name": "Fetch a vocal separation job by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/vocal-separations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single vocal separation job by id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

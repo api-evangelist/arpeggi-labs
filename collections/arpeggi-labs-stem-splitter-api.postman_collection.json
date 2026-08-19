@@ -1,0 +1,788 @@
+{
+  "item": [
+    {
+      "id": "7b57ad70-333d-42bb-ab89-2b0dde54dbb6",
+      "name": "Stem Splitter",
+      "description": {
+        "content": "Split an audio track into vocal and instrument stems.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a796812-95d5-4b3f-95cd-958a0ebeb017",
+          "name": "Create a new stem splitter job",
+          "request": {
+            "name": "Create a new stem splitter job",
+            "description": {
+              "content": "Creates a stem splitter job and adds it to the splitter queue. All requests must be made as multipart form requests.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stem-splits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "inputFile",
+                  "type": "file",
+                  "description": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f5cf8f4b-90ca-4386-8c21-97195a6ed53a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6024,\n  \"createdAt\": \"string\",\n  \"type\": \"separate\",\n  \"status\": \"success\",\n  \"jobStartTime\": \"string\",\n  \"jobEndTime\": \"string\",\n  \"vocalAudioFileUrl\": \"string\",\n  \"lossyVocalAudioFileUrl\": \"string\",\n  \"backingAudioFileUrl\": \"string\",\n  \"stemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"lossyStemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92f46758-d634-475f-837d-9b67835e89fb",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0179d263-5789-4658-b3a1-135cd9ed032d",
+              "name": "Request body or query params are invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "602efd9d-fc92-4990-a870-7e01ed4be37a",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, webm, mp3 or flac. Max 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "inputFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2706cee4-96b9-4fca-98bc-74c1a7397a22",
+          "name": "Fetch stem splitter jobs",
+          "request": {
+            "name": "Fetch stem splitter jobs",
+            "description": {
+              "content": "Returns a paginated list of stem splitter jobs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stem-splits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Sort order, asc (default) or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page offset (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Page size (default 10)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91fe44fa-f318-45de-be92-e3e459eaf324",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 1874,\n      \"createdAt\": \"string\",\n      \"type\": \"separate\",\n      \"status\": \"running\",\n      \"jobStartTime\": \"string\",\n      \"jobEndTime\": \"string\",\n      \"vocalAudioFileUrl\": \"string\",\n      \"lossyVocalAudioFileUrl\": \"string\",\n      \"backingAudioFileUrl\": \"string\",\n      \"stemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"lossyStemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 2721,\n      \"createdAt\": \"string\",\n      \"type\": \"separate\",\n      \"status\": \"running\",\n      \"jobStartTime\": \"string\",\n      \"jobEndTime\": \"string\",\n      \"vocalAudioFileUrl\": \"string\",\n      \"lossyVocalAudioFileUrl\": \"string\",\n      \"backingAudioFileUrl\": \"string\",\n      \"stemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"lossyStemFileUrls\": [\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"instrument\": \"string\",\n          \"url\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"total\": 5312,\n    \"perPage\": 960,\n    \"currentPage\": 283,\n    \"lastPage\": 1550,\n    \"firstPage\": 4484,\n    \"firstPageUrl\": \"string\",\n    \"lastPageUrl\": \"string\",\n    \"nextPageUrl\": \"string\",\n    \"previousPageUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d32b2e4-b925-4f19-8a68-dbd35b032bf6",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a11ded2c-4ecc-4d45-a953-eeed4b6322a6",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad6394dc-7b9b-4a19-9a22-d4b026bd4e73",
+          "name": "Fetch a stem splitter job by ID",
+          "request": {
+            "name": "Fetch a stem splitter job by ID",
+            "description": {
+              "content": "Returns a single stem splitter job by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stem-splits",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1048c70-dd2d-4731-a1a1-81cd84855f82",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5267,\n  \"createdAt\": \"string\",\n  \"type\": \"separate\",\n  \"status\": \"running\",\n  \"jobStartTime\": \"string\",\n  \"jobEndTime\": \"string\",\n  \"vocalAudioFileUrl\": \"string\",\n  \"lossyVocalAudioFileUrl\": \"string\",\n  \"backingAudioFileUrl\": \"string\",\n  \"stemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"lossyStemFileUrls\": [\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"instrument\": \"string\",\n      \"url\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0cde554-56f0-4ea2-a24f-621c76d64d3a",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1226b91d-8902-4ec9-b20a-5507252a2e36",
+              "name": "Attempted to fetch a resource that does not belong to the requesting user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "32e874e5-baf8-4ddb-825d-e8df8fa31505",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stem-splits",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://arpeggi.io/api/kits/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c63adfea-c501-432c-ae04-882346b6b6ff",
+    "name": "Kits AI Stem Splitter API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Kits AI API (operated by Arpeggi Labs) provides studio-quality AI music and audio tools as asynchronous inference jobs: voice conversion, vocal separation, stem splitting, and voice-model blending, plus a catalog of royalty-free artist voice models. All create endpoints enqueue a job and return its status; poll the corresponding fetch endpoint for the signed output file URLs. This specification was generated by API Evangelist from the published Kits AI documentation (https://docs.kits.ai/); the provider lists an openapi.json in its llms.txt but the file was not retrievable at generation time.\n\nContact Support:\n Name: Kits AI Support",
+      "type": "text/plain"
+    }
+  }
+}

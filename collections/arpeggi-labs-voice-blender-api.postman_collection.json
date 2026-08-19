@@ -1,0 +1,767 @@
+{
+  "item": [
+    {
+      "id": "7000eb81-5764-4f5b-bd78-d9bde802ceb2",
+      "name": "Voice Blender",
+      "description": {
+        "content": "Blend two to four voice models into a new voice model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "043fab07-2d7e-41f9-a309-d3cde6abb1f9",
+          "name": "Create a voice blender job",
+          "request": {
+            "name": "Create a voice blender job",
+            "description": {
+              "content": "Creates a voice blender job and adds it to the blender queue. Provide two to four voice models and one fewer alpha value than the number of models (the last alpha is 1 minus the sum of the others). The output model is usable once the job status is \"success\".",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-blender"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"modelId1\": \"<integer>\",\n  \"modelId2\": \"<integer>\",\n  \"alpha\": \"<number>\",\n  \"modelId3\": \"<integer>\",\n  \"modelId4\": \"<integer>\",\n  \"alpha2\": \"<number>\",\n  \"alpha3\": \"<number>\",\n  \"title\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66c759c3-376f-4aaa-8189-be4f8fa72121",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"modelId1\": \"<integer>\",\n  \"modelId2\": \"<integer>\",\n  \"alpha\": \"<number>\",\n  \"modelId3\": \"<integer>\",\n  \"modelId4\": \"<integer>\",\n  \"alpha2\": \"<number>\",\n  \"alpha3\": \"<number>\",\n  \"title\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8870,\n  \"model1Id\": 6587,\n  \"model2Id\": 7263,\n  \"model3Id\": 2626,\n  \"model4Id\": 1108,\n  \"alpha\": 3803.324902470069,\n  \"alpha2\": 171.98197768030664,\n  \"alpha3\": 8337.075416395664,\n  \"status\": \"cancelled\",\n  \"outputModelId\": 9890,\n  \"title\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b88790ee-b9fd-4105-8e08-439b82f10994",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"modelId1\": \"<integer>\",\n  \"modelId2\": \"<integer>\",\n  \"alpha\": \"<number>\",\n  \"modelId3\": \"<integer>\",\n  \"modelId4\": \"<integer>\",\n  \"alpha2\": \"<number>\",\n  \"alpha3\": \"<number>\",\n  \"title\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5127cb06-5db0-49f1-a801-74bdd9ef48b7",
+              "name": "Request body or query params are invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"modelId1\": \"<integer>\",\n  \"modelId2\": \"<integer>\",\n  \"alpha\": \"<number>\",\n  \"modelId3\": \"<integer>\",\n  \"modelId4\": \"<integer>\",\n  \"alpha2\": \"<number>\",\n  \"alpha3\": \"<number>\",\n  \"title\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ba3da752-2173-4d9a-ba0c-3fac9e623cf1",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"modelId1\": \"<integer>\",\n  \"modelId2\": \"<integer>\",\n  \"alpha\": \"<number>\",\n  \"modelId3\": \"<integer>\",\n  \"modelId4\": \"<integer>\",\n  \"alpha2\": \"<number>\",\n  \"alpha3\": \"<number>\",\n  \"title\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd87c557-59a1-4904-8a7f-889985e11c3c",
+          "name": "Fetch voice blender jobs",
+          "request": {
+            "name": "Fetch voice blender jobs",
+            "description": {
+              "content": "Returns a paginated list of voice blender jobs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-blender"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Sort order, asc (default) or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page offset (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Page size (default 10)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3c9974c-9ad9-4933-b0a5-4a9479f1e21e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 7748,\n      \"model1Id\": 3670,\n      \"model2Id\": 2491,\n      \"model3Id\": 6860,\n      \"model4Id\": 8580,\n      \"alpha\": 7314.783487714199,\n      \"alpha2\": 8349.972119724136,\n      \"alpha3\": 3330.3311506671585,\n      \"status\": \"success\",\n      \"outputModelId\": 4240,\n      \"title\": \"string\"\n    },\n    {\n      \"id\": 185,\n      \"model1Id\": 3331,\n      \"model2Id\": 6499,\n      \"model3Id\": 770,\n      \"model4Id\": 977,\n      \"alpha\": 1296.7986400419795,\n      \"alpha2\": 3456.2962287498976,\n      \"alpha3\": 8584.305503485613,\n      \"status\": \"running\",\n      \"outputModelId\": 4477,\n      \"title\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"total\": 1827,\n    \"perPage\": 5330,\n    \"currentPage\": 236,\n    \"lastPage\": 8654,\n    \"firstPage\": 5916,\n    \"firstPageUrl\": \"string\",\n    \"lastPageUrl\": \"string\",\n    \"nextPageUrl\": \"string\",\n    \"previousPageUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ef6fd50c-2b11-4cea-8bde-c01239627db3",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d260a79a-855c-45f9-9815-e73d7fdfbb54",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "993c8a13-a3f8-4136-a46b-920651825242",
+          "name": "Fetch a voice blender job by ID",
+          "request": {
+            "name": "Fetch a voice blender job by ID",
+            "description": {
+              "content": "Returns a single voice blender job by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-blender",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d38a271-b8b9-4fe1-8537-bfa653e6a3bb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8870,\n  \"model1Id\": 6587,\n  \"model2Id\": 7263,\n  \"model3Id\": 2626,\n  \"model4Id\": 1108,\n  \"alpha\": 3803.324902470069,\n  \"alpha2\": 171.98197768030664,\n  \"alpha3\": 8337.075416395664,\n  \"status\": \"cancelled\",\n  \"outputModelId\": 9890,\n  \"title\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12704de7-b8f6-4009-8711-00dc67561ec8",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3816cc45-85c7-4412-b065-7d1a7ce0aefa",
+              "name": "Attempted to fetch a resource that does not belong to the requesting user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "214f4d46-d700-4721-8e28-1dfe9188f581",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-blender",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://arpeggi.io/api/kits/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e3508cba-4213-444b-8555-e5c4339357ab",
+    "name": "Kits AI Stem Splitter Voice Blender API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Kits AI API (operated by Arpeggi Labs) provides studio-quality AI music and audio tools as asynchronous inference jobs: voice conversion, vocal separation, stem splitting, and voice-model blending, plus a catalog of royalty-free artist voice models. All create endpoints enqueue a job and return its status; poll the corresponding fetch endpoint for the signed output file URLs. This specification was generated by API Evangelist from the published Kits AI documentation (https://docs.kits.ai/); the provider lists an openapi.json in its llms.txt but the file was not retrievable at generation time.\n\nContact Support:\n Name: Kits AI Support",
+      "type": "text/plain"
+    }
+  }
+}

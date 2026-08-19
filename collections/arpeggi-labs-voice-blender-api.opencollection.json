@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kits AI Stem Splitter Voice Blender API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voice Blender",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch voice blender jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/voice-blender",
+            "params": [
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, asc (default) or desc."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page offset (default 1)."
+              },
+              {
+                "name": "perPage",
+                "value": "",
+                "type": "query",
+                "description": "Page size (default 10)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of voice blender jobs."
+        },
+        {
+          "info": {
+            "name": "Create a voice blender job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://arpeggi.io/api/kits/v1/voice-blender",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a voice blender job and adds it to the blender queue. Provide two to four voice models and one fewer alpha value than the number of models (the last alpha is 1 minus the sum of the others). The output model is usable once the job status is \"success\"."
+        },
+        {
+          "info": {
+            "name": "Fetch a voice blender job by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://arpeggi.io/api/kits/v1/voice-blender/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single voice blender job by id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

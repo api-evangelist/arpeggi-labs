@@ -1,0 +1,1096 @@
+{
+  "item": [
+    {
+      "id": "ea7d530f-e2da-421e-9519-8064920cf1d5",
+      "name": "Voice Conversion",
+      "description": {
+        "content": "Convert an input performance to a target voice model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "50d565dc-e98f-43d2-ac33-c73fbb4ea196",
+          "name": "Create a new voice conversion job",
+          "request": {
+            "name": "Create a new voice conversion job",
+            "description": {
+              "content": "Creates a voice conversion inference job and adds it to the inference queue. All requests must be made as multipart form requests. The response contains the job status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-conversions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "voiceModelId",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "(Required) ID of the voice model."
+                },
+                {
+                  "key": "soundFile",
+                  "type": "file",
+                  "description": "(Required) Input audio. Supports wav, mp3, or flac. Max 100MB."
+                },
+                {
+                  "key": "conversionStrength",
+                  "value": "<number>",
+                  "type": "text",
+                  "description": "Amount of accent from the voice model (0 to 1)."
+                },
+                {
+                  "key": "modelVolumeMix",
+                  "value": "<number>",
+                  "type": "text",
+                  "description": "Mix between input volume and model volume (0 to 1)."
+                },
+                {
+                  "key": "pitchShift",
+                  "value": "<number>",
+                  "type": "text",
+                  "description": "Semitones to shift the input audio (-24 to 24)."
+                },
+                {
+                  "key": "pre",
+                  "value": "{\"NoiseGate\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"HighPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"LowPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"}}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "post",
+                  "value": "{\"Chorus\":{\"rate_hz\":\"<number>\",\"depth\":\"<number>\",\"centre_delay_ms\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"},\"Reverb\":{\"room_size\":\"<number>\",\"damping\":\"<number>\",\"wet_level\":\"<number>\",\"dry_level\":\"<number>\",\"width\":\"<number>\",\"freeze_mode\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"Delay\":{\"delay_seconds\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"}}",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "61ebcec2-893a-4c80-9118-afd2fecdd631",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ID of the voice model.",
+                        "type": "text/plain"
+                      },
+                      "key": "voiceModelId",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, mp3, or flac. Max 100MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "soundFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Amount of accent from the voice model (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "conversionStrength",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Mix between input volume and model volume (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "modelVolumeMix",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Semitones to shift the input audio (-24 to 24).",
+                        "type": "text/plain"
+                      },
+                      "key": "pitchShift",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "pre",
+                      "value": "{\"NoiseGate\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"HighPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"LowPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "post",
+                      "value": "{\"Chorus\":{\"rate_hz\":\"<number>\",\"depth\":\"<number>\",\"centre_delay_ms\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"},\"Reverb\":{\"room_size\":\"<number>\",\"damping\":\"<number>\",\"wet_level\":\"<number>\",\"dry_level\":\"<number>\",\"width\":\"<number>\",\"freeze_mode\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"Delay\":{\"delay_seconds\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"}}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5433,\n  \"createdAt\": \"string\",\n  \"type\": \"infer\",\n  \"status\": \"error\",\n  \"jobStartTime\": \"string\",\n  \"jobEndTime\": \"string\",\n  \"outputFileUrl\": \"string\",\n  \"lossyOutputFileUrl\": \"string\",\n  \"recombinedAudioFileUrl\": \"string\",\n  \"voiceModelId\": 9627,\n  \"model\": {\n    \"id\": 9377,\n    \"title\": \"string\",\n    \"isUsable\": true,\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"imageUrl\": \"string\",\n    \"demoUrl\": \"string\",\n    \"twitterLink\": \"string\",\n    \"instagramLink\": \"string\",\n    \"tiktokLink\": \"string\",\n    \"spotifyLink\": \"string\",\n    \"youtubeLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7c2f52f-8fa7-46d8-ada5-5ba13edcddcb",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ID of the voice model.",
+                        "type": "text/plain"
+                      },
+                      "key": "voiceModelId",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, mp3, or flac. Max 100MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "soundFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Amount of accent from the voice model (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "conversionStrength",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Mix between input volume and model volume (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "modelVolumeMix",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Semitones to shift the input audio (-24 to 24).",
+                        "type": "text/plain"
+                      },
+                      "key": "pitchShift",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "pre",
+                      "value": "{\"NoiseGate\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"HighPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"LowPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "post",
+                      "value": "{\"Chorus\":{\"rate_hz\":\"<number>\",\"depth\":\"<number>\",\"centre_delay_ms\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"},\"Reverb\":{\"room_size\":\"<number>\",\"damping\":\"<number>\",\"wet_level\":\"<number>\",\"dry_level\":\"<number>\",\"width\":\"<number>\",\"freeze_mode\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"Delay\":{\"delay_seconds\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"}}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ac36dc76-f668-4307-bacb-0459d437b06a",
+              "name": "Request body or query params are invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ID of the voice model.",
+                        "type": "text/plain"
+                      },
+                      "key": "voiceModelId",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, mp3, or flac. Max 100MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "soundFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Amount of accent from the voice model (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "conversionStrength",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Mix between input volume and model volume (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "modelVolumeMix",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Semitones to shift the input audio (-24 to 24).",
+                        "type": "text/plain"
+                      },
+                      "key": "pitchShift",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "pre",
+                      "value": "{\"NoiseGate\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"HighPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"LowPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "post",
+                      "value": "{\"Chorus\":{\"rate_hz\":\"<number>\",\"depth\":\"<number>\",\"centre_delay_ms\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"},\"Reverb\":{\"room_size\":\"<number>\",\"damping\":\"<number>\",\"wet_level\":\"<number>\",\"dry_level\":\"<number>\",\"width\":\"<number>\",\"freeze_mode\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"Delay\":{\"delay_seconds\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"}}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e66ae4f-9b9f-4b72-aee8-6011c805b0d6",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ID of the voice model.",
+                        "type": "text/plain"
+                      },
+                      "key": "voiceModelId",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Input audio. Supports wav, mp3, or flac. Max 100MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "soundFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Amount of accent from the voice model (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "conversionStrength",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Mix between input volume and model volume (0 to 1).",
+                        "type": "text/plain"
+                      },
+                      "key": "modelVolumeMix",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Semitones to shift the input audio (-24 to 24).",
+                        "type": "text/plain"
+                      },
+                      "key": "pitchShift",
+                      "value": "<number>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "pre",
+                      "value": "{\"NoiseGate\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"HighPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"LowPassFilter\":{\"cutoff_frequency_hz\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "post",
+                      "value": "{\"Chorus\":{\"rate_hz\":\"<number>\",\"depth\":\"<number>\",\"centre_delay_ms\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"},\"Reverb\":{\"room_size\":\"<number>\",\"damping\":\"<number>\",\"wet_level\":\"<number>\",\"dry_level\":\"<number>\",\"width\":\"<number>\",\"freeze_mode\":\"<number>\"},\"Compressor\":{\"threshold_db\":\"<number>\",\"ratio\":\"<number>\",\"attack_ms\":\"<number>\",\"release_ms\":\"<number>\"},\"Delay\":{\"delay_seconds\":\"<number>\",\"feedback\":\"<number>\",\"mix\":\"<number>\"}}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efdfb14c-b7b1-4214-bb64-bcabdd9effee",
+          "name": "Fetch voice conversions",
+          "request": {
+            "name": "Fetch voice conversions",
+            "description": {
+              "content": "Returns a paginated list of voice conversion inference jobs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-conversions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Sort order, asc (default) or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page offset (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Page size (default 10)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "faacbd5a-df50-4a80-8e41-61caa7557a5a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 4082,\n      \"createdAt\": \"string\",\n      \"type\": \"infer\",\n      \"status\": \"running\",\n      \"jobStartTime\": \"string\",\n      \"jobEndTime\": \"string\",\n      \"outputFileUrl\": \"string\",\n      \"lossyOutputFileUrl\": \"string\",\n      \"recombinedAudioFileUrl\": \"string\",\n      \"voiceModelId\": 2651,\n      \"model\": {\n        \"id\": 5245,\n        \"title\": \"string\",\n        \"isUsable\": false,\n        \"tags\": [\n          \"string\",\n          \"string\"\n        ],\n        \"imageUrl\": \"string\",\n        \"demoUrl\": \"string\",\n        \"twitterLink\": \"string\",\n        \"instagramLink\": \"string\",\n        \"tiktokLink\": \"string\",\n        \"spotifyLink\": \"string\",\n        \"youtubeLink\": \"string\"\n      }\n    },\n    {\n      \"id\": 1735,\n      \"createdAt\": \"string\",\n      \"type\": \"infer\",\n      \"status\": \"running\",\n      \"jobStartTime\": \"string\",\n      \"jobEndTime\": \"string\",\n      \"outputFileUrl\": \"string\",\n      \"lossyOutputFileUrl\": \"string\",\n      \"recombinedAudioFileUrl\": \"string\",\n      \"voiceModelId\": 9125,\n      \"model\": {\n        \"id\": 9533,\n        \"title\": \"string\",\n        \"isUsable\": true,\n        \"tags\": [\n          \"string\",\n          \"string\"\n        ],\n        \"imageUrl\": \"string\",\n        \"demoUrl\": \"string\",\n        \"twitterLink\": \"string\",\n        \"instagramLink\": \"string\",\n        \"tiktokLink\": \"string\",\n        \"spotifyLink\": \"string\",\n        \"youtubeLink\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 5091,\n    \"perPage\": 7008,\n    \"currentPage\": 3631,\n    \"lastPage\": 1841,\n    \"firstPage\": 7956,\n    \"firstPageUrl\": \"string\",\n    \"lastPageUrl\": \"string\",\n    \"nextPageUrl\": \"string\",\n    \"previousPageUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a6943ce-c074-452d-a8db-10574e661598",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e75211b1-00a8-44a8-835e-325ce54443ae",
+              "name": "Attempted to fetch a resource that does not belong to the requesting user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ebdcbfe8-bfac-426a-b90d-9eed5788c032",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84ef6a84-870a-4970-afb1-bec83d6908a9",
+          "name": "Fetch a voice conversion by ID",
+          "request": {
+            "name": "Fetch a voice conversion by ID",
+            "description": {
+              "content": "Returns a single voice conversion inference job by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voice-conversions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff170f3d-3691-414a-af1b-82cc8860359e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5934,\n  \"createdAt\": \"string\",\n  \"type\": \"tts\",\n  \"status\": \"running\",\n  \"jobStartTime\": \"string\",\n  \"jobEndTime\": \"string\",\n  \"outputFileUrl\": \"string\",\n  \"lossyOutputFileUrl\": \"string\",\n  \"recombinedAudioFileUrl\": \"string\",\n  \"voiceModelId\": 8051,\n  \"model\": {\n    \"id\": 9609,\n    \"title\": \"string\",\n    \"isUsable\": true,\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"imageUrl\": \"string\",\n    \"demoUrl\": \"string\",\n    \"twitterLink\": \"string\",\n    \"instagramLink\": \"string\",\n    \"tiktokLink\": \"string\",\n    \"spotifyLink\": \"string\",\n    \"youtubeLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0495154b-9d0b-4475-bb46-cd4c9fcc541b",
+              "name": "Authentication was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "824971c0-82d7-494e-a670-beb8376ba67c",
+              "name": "Attempted to fetch a resource that does not belong to the requesting user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b2ca3ad-da31-4c39-bee4-b2729c06b65c",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice-conversions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://arpeggi.io/api/kits/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a66d28af-8c24-44b8-b66f-ae6dc0b9dd42",
+    "name": "Kits AI Stem Splitter Voice Conversion API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Kits AI API (operated by Arpeggi Labs) provides studio-quality AI music and audio tools as asynchronous inference jobs: voice conversion, vocal separation, stem splitting, and voice-model blending, plus a catalog of royalty-free artist voice models. All create endpoints enqueue a job and return its status; poll the corresponding fetch endpoint for the signed output file URLs. This specification was generated by API Evangelist from the published Kits AI documentation (https://docs.kits.ai/); the provider lists an openapi.json in its llms.txt but the file was not retrievable at generation time.\n\nContact Support:\n Name: Kits AI Support",
+      "type": "text/plain"
+    }
+  }
+}
