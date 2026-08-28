@@ -13,6 +13,18 @@ description: >-
   the signed output file URLs. Arpeggi Labs is an a16z portfolio company; its
   earlier product was Arpeggi Studio, a web3 in-browser music creation platform.
 url: https://raw.githubusercontent.com/api-evangelist/arpeggi-labs/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
