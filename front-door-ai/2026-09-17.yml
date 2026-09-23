@@ -1,0 +1,25 @@
+# Front Door AI Index — arpeggi-labs — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: arpeggi-labs
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: kits.ai
+  final_host: www.kits.ai
+  ownership: own
+  owner: arpeggi-labs
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 74
+  host_score: 74
+  density: 43.48
+  words: 1702
+  tiers:
+    agentic: 0
+    core: 74
+    model: 0
+  ambiguous: 0
+  top_terms:
+    AI: 74
