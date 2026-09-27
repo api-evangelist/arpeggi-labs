@@ -59,7 +59,7 @@ tags:
 - Audio
 - Artificial Intelligence
 - Voice
-- Machine-Learning
+- Machine Learning
 - Generative AI
 - Media
 tags_raw:
@@ -71,6 +71,7 @@ tags_raw:
 - Machine Learning
 - Generative AI
 - Media
+- Machine-Learning
 apis:
 - aid: arpeggi-labs:arpeggi-labs-stem-splitter-api
   name: Arpeggi Labs Stem Splitter API

@@ -140,6 +140,12 @@ components:
         - asc
         - desc
         default: asc
+    JobId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
     Page:
       name: page
       in: query
@@ -147,12 +153,6 @@ components:
       schema:
         type: integer
         default: 1
-    JobId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
     PerPage:
       name: perPage
       in: query
@@ -161,20 +161,8 @@ components:
         type: integer
         default: 10
   responses:
-    TooManyRequests:
-      description: Rate limit exceeded.
-      content:
-        text/plain:
-          schema:
-            type: string
     UnprocessableEntity:
       description: Request body or query params are invalid.
-      content:
-        text/plain:
-          schema:
-            type: string
-    Unauthorized:
-      description: Authentication was not provided or was invalid.
       content:
         text/plain:
           schema:
@@ -185,32 +173,19 @@ components:
         text/plain:
           schema:
             type: string
+    Unauthorized:
+      description: Authentication was not provided or was invalid.
+      content:
+        text/plain:
+          schema:
+            type: string
+    TooManyRequests:
+      description: Rate limit exceeded.
+      content:
+        text/plain:
+          schema:
+            type: string
   schemas:
-    PaginationMeta:
-      type: object
-      properties:
-        total:
-          type: integer
-        perPage:
-          type: integer
-        currentPage:
-          type: integer
-        lastPage:
-          type: integer
-        firstPage:
-          type: integer
-        firstPageUrl:
-          type: string
-        lastPageUrl:
-          type: string
-        nextPageUrl:
-          type:
-          - string
-          - 'null'
-        previousPageUrl:
-          type:
-          - string
-          - 'null'
     VoiceBlenderJob:
       type: object
       description: A voice blender job that combines two to four voice models.
@@ -252,6 +227,31 @@ components:
           - 'null'
         title:
           type: string
+    PaginationMeta:
+      type: object
+      properties:
+        total:
+          type: integer
+        perPage:
+          type: integer
+        currentPage:
+          type: integer
+        lastPage:
+          type: integer
+        firstPage:
+          type: integer
+        firstPageUrl:
+          type: string
+        lastPageUrl:
+          type: string
+        nextPageUrl:
+          type:
+          - string
+          - 'null'
+        previousPageUrl:
+          type:
+          - string
+          - 'null'
   securitySchemes:
     bearerAuth:
       type: http

@@ -119,19 +119,38 @@ paths:
         '429':
           $ref: '#/components/responses/TooManyRequests'
 components:
+  parameters:
+    Order:
+      name: order
+      in: query
+      description: Sort order, asc (default) or desc.
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+        default: asc
+    JobId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Page:
+      name: page
+      in: query
+      description: Page offset (default 1).
+      schema:
+        type: integer
+        default: 1
+    PerPage:
+      name: perPage
+      in: query
+      description: Page size (default 10).
+      schema:
+        type: integer
+        default: 10
   responses:
-    Unauthorized:
-      description: Authentication was not provided or was invalid.
-      content:
-        text/plain:
-          schema:
-            type: string
-    TooManyRequests:
-      description: Rate limit exceeded.
-      content:
-        text/plain:
-          schema:
-            type: string
     UnprocessableEntity:
       description: Request body or query params are invalid.
       content:
@@ -140,6 +159,18 @@ components:
             type: string
     Forbidden:
       description: Attempted to fetch a resource that does not belong to the requesting user.
+      content:
+        text/plain:
+          schema:
+            type: string
+    Unauthorized:
+      description: Authentication was not provided or was invalid.
+      content:
+        text/plain:
+          schema:
+            type: string
+    TooManyRequests:
+      description: Rate limit exceeded.
       content:
         text/plain:
           schema:
@@ -189,6 +220,15 @@ components:
           type:
           - string
           - 'null'
+    PaginatedInferenceJobs:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InferenceJob'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
     PreProcessingEffects:
       type: object
       description: Effects run on the input file before conversion.
@@ -229,6 +269,54 @@ components:
               type: number
             release_ms:
               type: number
+    InferenceJob:
+      type: object
+      description: An inference job created through the API.
+      properties:
+        id:
+          type: integer
+        createdAt:
+          type: string
+        type:
+          type: string
+          enum:
+          - infer
+          - tts
+        status:
+          type: string
+          enum:
+          - running
+          - success
+          - error
+          - cancelled
+        jobStartTime:
+          type:
+          - string
+          - 'null'
+        jobEndTime:
+          type:
+          - string
+          - 'null'
+        outputFileUrl:
+          type:
+          - string
+          - 'null'
+          description: Signed URL for the output file (expires in 4 hours).
+        lossyOutputFileUrl:
+          type:
+          - string
+          - 'null'
+        recombinedAudioFileUrl:
+          type:
+          - string
+          - 'null'
+        voiceModelId:
+          type:
+          - integer
+          - 'null'
+        model:
+          allOf:
+          - $ref: '#/components/schemas/VoiceModel'
     PostProcessingEffects:
       type: object
       description: Effects run on the output file after conversion.
@@ -293,15 +381,6 @@ components:
               type: number
               minimum: 0
               maximum: 1
-    PaginatedInferenceJobs:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InferenceJob'
-        meta:
-          $ref: '#/components/schemas/PaginationMeta'
     PaginationMeta:
       type: object
       properties:
@@ -327,85 +406,6 @@ components:
           type:
           - string
           - 'null'
-    InferenceJob:
-      type: object
-      description: An inference job created through the API.
-      properties:
-        id:
-          type: integer
-        createdAt:
-          type: string
-        type:
-          type: string
-          enum:
-          - infer
-          - tts
-        status:
-          type: string
-          enum:
-          - running
-          - success
-          - error
-          - cancelled
-        jobStartTime:
-          type:
-          - string
-          - 'null'
-        jobEndTime:
-          type:
-          - string
-          - 'null'
-        outputFileUrl:
-          type:
-          - string
-          - 'null'
-          description: Signed URL for the output file (expires in 4 hours).
-        lossyOutputFileUrl:
-          type:
-          - string
-          - 'null'
-        recombinedAudioFileUrl:
-          type:
-          - string
-          - 'null'
-        voiceModelId:
-          type:
-          - integer
-          - 'null'
-        model:
-          allOf:
-          - $ref: '#/components/schemas/VoiceModel'
-  parameters:
-    Order:
-      name: order
-      in: query
-      description: Sort order, asc (default) or desc.
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-        default: asc
-    Page:
-      name: page
-      in: query
-      description: Page offset (default 1).
-      schema:
-        type: integer
-        default: 1
-    JobId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    PerPage:
-      name: perPage
-      in: query
-      description: Page size (default 10).
-      schema:
-        type: integer
-        default: 10
   securitySchemes:
     bearerAuth:
       type: http
