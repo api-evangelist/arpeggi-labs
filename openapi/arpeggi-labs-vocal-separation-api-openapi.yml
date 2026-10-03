@@ -94,79 +94,7 @@ paths:
         '429':
           $ref: '#/components/responses/TooManyRequests'
 components:
-  parameters:
-    Order:
-      name: order
-      in: query
-      description: Sort order, asc (default) or desc.
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-        default: asc
-    JobId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    Page:
-      name: page
-      in: query
-      description: Page offset (default 1).
-      schema:
-        type: integer
-        default: 1
-    PerPage:
-      name: perPage
-      in: query
-      description: Page size (default 10).
-      schema:
-        type: integer
-        default: 10
-  responses:
-    UnprocessableEntity:
-      description: Request body or query params are invalid.
-      content:
-        text/plain:
-          schema:
-            type: string
-    Unauthorized:
-      description: Authentication was not provided or was invalid.
-      content:
-        text/plain:
-          schema:
-            type: string
-    TooManyRequests:
-      description: Rate limit exceeded.
-      content:
-        text/plain:
-          schema:
-            type: string
-    Forbidden:
-      description: Attempted to fetch a resource that does not belong to the requesting user.
-      content:
-        text/plain:
-          schema:
-            type: string
   schemas:
-    PaginatedSeparationJobs:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/SeparationJob'
-        meta:
-          $ref: '#/components/schemas/PaginationMeta'
-    StemFile:
-      type: object
-      properties:
-        instrument:
-          type: string
-        url:
-          type: string
     SeparationJob:
       type: object
       description: A vocal separation or stem splitter job.
@@ -220,6 +148,13 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/StemFile'
+    StemFile:
+      type: object
+      properties:
+        instrument:
+          type: string
+        url:
+          type: string
     PaginationMeta:
       type: object
       properties:
@@ -245,6 +180,71 @@ components:
           type:
           - string
           - 'null'
+    PaginatedSeparationJobs:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SeparationJob'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+  responses:
+    Unauthorized:
+      description: Authentication was not provided or was invalid.
+      content:
+        text/plain:
+          schema:
+            type: string
+    TooManyRequests:
+      description: Rate limit exceeded.
+      content:
+        text/plain:
+          schema:
+            type: string
+    Forbidden:
+      description: Attempted to fetch a resource that does not belong to the requesting user.
+      content:
+        text/plain:
+          schema:
+            type: string
+    UnprocessableEntity:
+      description: Request body or query params are invalid.
+      content:
+        text/plain:
+          schema:
+            type: string
+  parameters:
+    Order:
+      name: order
+      in: query
+      description: Sort order, asc (default) or desc.
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+        default: asc
+    Page:
+      name: page
+      in: query
+      description: Page offset (default 1).
+      schema:
+        type: integer
+        default: 1
+    JobId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    PerPage:
+      name: perPage
+      in: query
+      description: Page size (default 10).
+      schema:
+        type: integer
+        default: 10
   securitySchemes:
     bearerAuth:
       type: http
