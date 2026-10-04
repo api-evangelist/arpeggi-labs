@@ -119,56 +119,63 @@ paths:
         '429':
           $ref: '#/components/responses/TooManyRequests'
 components:
+  responses:
+    Unauthorized:
+      description: Authentication was not provided or was invalid.
+      content:
+        text/plain:
+          schema:
+            type: string
+    Forbidden:
+      description: Attempted to fetch a resource that does not belong to the requesting user.
+      content:
+        text/plain:
+          schema:
+            type: string
+    TooManyRequests:
+      description: Rate limit exceeded.
+      content:
+        text/plain:
+          schema:
+            type: string
+    UnprocessableEntity:
+      description: Request body or query params are invalid.
+      content:
+        text/plain:
+          schema:
+            type: string
+  parameters:
+    Order:
+      name: order
+      in: query
+      description: Sort order, asc (default) or desc.
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+        default: asc
+    PerPage:
+      name: perPage
+      in: query
+      description: Page size (default 10).
+      schema:
+        type: integer
+        default: 10
+    JobId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Page:
+      name: page
+      in: query
+      description: Page offset (default 1).
+      schema:
+        type: integer
+        default: 1
   schemas:
-    PaginatedInferenceJobs:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InferenceJob'
-        meta:
-          $ref: '#/components/schemas/PaginationMeta'
-    PreProcessingEffects:
-      type: object
-      description: Effects run on the input file before conversion.
-      properties:
-        NoiseGate:
-          type: object
-          properties:
-            threshold_db:
-              type: number
-            ratio:
-              type: number
-            attack_ms:
-              type: number
-            release_ms:
-              type: number
-        HighPassFilter:
-          type: object
-          properties:
-            cutoff_frequency_hz:
-              type: number
-              minimum: 0
-              maximum: 99999
-        LowPassFilter:
-          type: object
-          properties:
-            cutoff_frequency_hz:
-              type: number
-              minimum: 0
-              maximum: 99999
-        Compressor:
-          type: object
-          properties:
-            threshold_db:
-              type: number
-            ratio:
-              type: number
-            attack_ms:
-              type: number
-            release_ms:
-              type: number
     PaginationMeta:
       type: object
       properties:
@@ -194,6 +201,15 @@ components:
           type:
           - string
           - 'null'
+    PaginatedInferenceJobs:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InferenceJob'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
     PostProcessingEffects:
       type: object
       description: Effects run on the output file after conversion.
@@ -306,6 +322,46 @@ components:
         model:
           allOf:
           - $ref: '#/components/schemas/VoiceModel'
+    PreProcessingEffects:
+      type: object
+      description: Effects run on the input file before conversion.
+      properties:
+        NoiseGate:
+          type: object
+          properties:
+            threshold_db:
+              type: number
+            ratio:
+              type: number
+            attack_ms:
+              type: number
+            release_ms:
+              type: number
+        HighPassFilter:
+          type: object
+          properties:
+            cutoff_frequency_hz:
+              type: number
+              minimum: 0
+              maximum: 99999
+        LowPassFilter:
+          type: object
+          properties:
+            cutoff_frequency_hz:
+              type: number
+              minimum: 0
+              maximum: 99999
+        Compressor:
+          type: object
+          properties:
+            threshold_db:
+              type: number
+            ratio:
+              type: number
+            attack_ms:
+              type: number
+            release_ms:
+              type: number
     VoiceModel:
       type: object
       description: A voice model that may be user created or internal to Kits.ai.
@@ -350,62 +406,6 @@ components:
           type:
           - string
           - 'null'
-  parameters:
-    Order:
-      name: order
-      in: query
-      description: Sort order, asc (default) or desc.
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-        default: asc
-    Page:
-      name: page
-      in: query
-      description: Page offset (default 1).
-      schema:
-        type: integer
-        default: 1
-    JobId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    PerPage:
-      name: perPage
-      in: query
-      description: Page size (default 10).
-      schema:
-        type: integer
-        default: 10
-  responses:
-    Unauthorized:
-      description: Authentication was not provided or was invalid.
-      content:
-        text/plain:
-          schema:
-            type: string
-    TooManyRequests:
-      description: Rate limit exceeded.
-      content:
-        text/plain:
-          schema:
-            type: string
-    Forbidden:
-      description: Attempted to fetch a resource that does not belong to the requesting user.
-      content:
-        text/plain:
-          schema:
-            type: string
-    UnprocessableEntity:
-      description: Request body or query params are invalid.
-      content:
-        text/plain:
-          schema:
-            type: string
   securitySchemes:
     bearerAuth:
       type: http

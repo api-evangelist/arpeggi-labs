@@ -109,19 +109,6 @@ components:
         - asc
         - desc
         default: asc
-    Page:
-      name: page
-      in: query
-      description: Page offset (default 1).
-      schema:
-        type: integer
-        default: 1
-    JobId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
     PerPage:
       name: perPage
       in: query
@@ -129,6 +116,19 @@ components:
       schema:
         type: integer
         default: 10
+    JobId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Page:
+      name: page
+      in: query
+      description: Page offset (default 1).
+      schema:
+        type: integer
+        default: 1
   schemas:
     PaginationMeta:
       type: object
