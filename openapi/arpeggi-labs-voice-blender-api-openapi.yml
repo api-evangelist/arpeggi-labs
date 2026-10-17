@@ -136,12 +136,6 @@ components:
         text/plain:
           schema:
             type: string
-    Forbidden:
-      description: Attempted to fetch a resource that does not belong to the requesting user.
-      content:
-        text/plain:
-          schema:
-            type: string
     TooManyRequests:
       description: Rate limit exceeded.
       content:
@@ -154,7 +148,38 @@ components:
         text/plain:
           schema:
             type: string
+    Forbidden:
+      description: Attempted to fetch a resource that does not belong to the requesting user.
+      content:
+        text/plain:
+          schema:
+            type: string
   schemas:
+    PaginationMeta:
+      type: object
+      properties:
+        total:
+          type: integer
+        perPage:
+          type: integer
+        currentPage:
+          type: integer
+        lastPage:
+          type: integer
+        firstPage:
+          type: integer
+        firstPageUrl:
+          type: string
+        lastPageUrl:
+          type: string
+        nextPageUrl:
+          type:
+          - string
+          - 'null'
+        previousPageUrl:
+          type:
+          - string
+          - 'null'
     VoiceBlenderJob:
       type: object
       description: A voice blender job that combines two to four voice models.
@@ -196,31 +221,6 @@ components:
           - 'null'
         title:
           type: string
-    PaginationMeta:
-      type: object
-      properties:
-        total:
-          type: integer
-        perPage:
-          type: integer
-        currentPage:
-          type: integer
-        lastPage:
-          type: integer
-        firstPage:
-          type: integer
-        firstPageUrl:
-          type: string
-        lastPageUrl:
-          type: string
-        nextPageUrl:
-          type:
-          - string
-          - 'null'
-        previousPageUrl:
-          type:
-          - string
-          - 'null'
   parameters:
     Order:
       name: order
@@ -232,13 +232,6 @@ components:
         - asc
         - desc
         default: asc
-    PerPage:
-      name: perPage
-      in: query
-      description: Page size (default 10).
-      schema:
-        type: integer
-        default: 10
     JobId:
       name: id
       in: path
@@ -252,6 +245,13 @@ components:
       schema:
         type: integer
         default: 1
+    PerPage:
+      name: perPage
+      in: query
+      description: Page size (default 10).
+      schema:
+        type: integer
+        default: 10
   securitySchemes:
     bearerAuth:
       type: http

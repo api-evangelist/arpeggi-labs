@@ -86,49 +86,18 @@ components:
         text/plain:
           schema:
             type: string
-    Forbidden:
-      description: Attempted to fetch a resource that does not belong to the requesting user.
-      content:
-        text/plain:
-          schema:
-            type: string
     UnprocessableEntity:
       description: Request body or query params are invalid.
       content:
         text/plain:
           schema:
             type: string
-  parameters:
-    Order:
-      name: order
-      in: query
-      description: Sort order, asc (default) or desc.
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-        default: asc
-    PerPage:
-      name: perPage
-      in: query
-      description: Page size (default 10).
-      schema:
-        type: integer
-        default: 10
-    JobId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    Page:
-      name: page
-      in: query
-      description: Page offset (default 1).
-      schema:
-        type: integer
-        default: 1
+    Forbidden:
+      description: Attempted to fetch a resource that does not belong to the requesting user.
+      content:
+        text/plain:
+          schema:
+            type: string
   schemas:
     PaginationMeta:
       type: object
@@ -199,6 +168,37 @@ components:
           type:
           - string
           - 'null'
+  parameters:
+    Order:
+      name: order
+      in: query
+      description: Sort order, asc (default) or desc.
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+        default: asc
+    JobId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Page:
+      name: page
+      in: query
+      description: Page offset (default 1).
+      schema:
+        type: integer
+        default: 1
+    PerPage:
+      name: perPage
+      in: query
+      description: Page size (default 10).
+      schema:
+        type: integer
+        default: 10
   securitySchemes:
     bearerAuth:
       type: http

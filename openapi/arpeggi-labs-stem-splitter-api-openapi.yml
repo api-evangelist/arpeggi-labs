@@ -101,12 +101,6 @@ components:
         text/plain:
           schema:
             type: string
-    Forbidden:
-      description: Attempted to fetch a resource that does not belong to the requesting user.
-      content:
-        text/plain:
-          schema:
-            type: string
     TooManyRequests:
       description: Rate limit exceeded.
       content:
@@ -119,7 +113,47 @@ components:
         text/plain:
           schema:
             type: string
+    Forbidden:
+      description: Attempted to fetch a resource that does not belong to the requesting user.
+      content:
+        text/plain:
+          schema:
+            type: string
   schemas:
+    PaginatedSeparationJobs:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SeparationJob'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+    PaginationMeta:
+      type: object
+      properties:
+        total:
+          type: integer
+        perPage:
+          type: integer
+        currentPage:
+          type: integer
+        lastPage:
+          type: integer
+        firstPage:
+          type: integer
+        firstPageUrl:
+          type: string
+        lastPageUrl:
+          type: string
+        nextPageUrl:
+          type:
+          - string
+          - 'null'
+        previousPageUrl:
+          type:
+          - string
+          - 'null'
     SeparationJob:
       type: object
       description: A vocal separation or stem splitter job.
@@ -173,31 +207,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/StemFile'
-    PaginationMeta:
-      type: object
-      properties:
-        total:
-          type: integer
-        perPage:
-          type: integer
-        currentPage:
-          type: integer
-        lastPage:
-          type: integer
-        firstPage:
-          type: integer
-        firstPageUrl:
-          type: string
-        lastPageUrl:
-          type: string
-        nextPageUrl:
-          type:
-          - string
-          - 'null'
-        previousPageUrl:
-          type:
-          - string
-          - 'null'
     StemFile:
       type: object
       properties:
@@ -205,15 +214,6 @@ components:
           type: string
         url:
           type: string
-    PaginatedSeparationJobs:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/SeparationJob'
-        meta:
-          $ref: '#/components/schemas/PaginationMeta'
   parameters:
     Order:
       name: order
@@ -225,13 +225,6 @@ components:
         - asc
         - desc
         default: asc
-    PerPage:
-      name: perPage
-      in: query
-      description: Page size (default 10).
-      schema:
-        type: integer
-        default: 10
     JobId:
       name: id
       in: path
@@ -245,6 +238,13 @@ components:
       schema:
         type: integer
         default: 1
+    PerPage:
+      name: perPage
+      in: query
+      description: Page size (default 10).
+      schema:
+        type: integer
+        default: 10
   securitySchemes:
     bearerAuth:
       type: http
